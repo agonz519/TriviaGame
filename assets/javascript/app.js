@@ -82,7 +82,7 @@ function shuffle(array) {
 }
 
 function newQuestion() {
-	countdown = 31; //31 because there is a delay in displaying 30 so it starts at 29.
+	countdown = 6; //31 because there is a delay in displaying 30 so it starts at 29.
 	timer();
 	randomQuestion = qGenerator();
 	$('#question').html(randomQuestion.question);
@@ -111,7 +111,7 @@ function randomNoRepeats(array) {
 }
 
 function resetGame() {
-	countdown = 30;
+	countdown = 5;
 	$('#time').html(countdown)
 	newQuestion();
 	timer();
