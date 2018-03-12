@@ -45,6 +45,7 @@ var q6 = {
 var questions = [q1,q2,q3,q4,q5,q6];
 var randomQuestion;
 var qGenerator = randomNoRepeats(questions);
+var questionCounter = 1;
 
 
 // Functions ================================
@@ -61,7 +62,7 @@ function decrement() {
 
 	if (countdown === 0) {
 		clearInterval(intervalId);
-		newQuestion();
+		continueGame();
 	}
 }
 
@@ -112,11 +113,63 @@ function randomNoRepeats(array) {
 
 function resetGame() {
 	countdown = 5;
+	questionCounter = 1;
 	$('#time').html(countdown)
 	newQuestion();
 	timer();
 }
 
+function continueGame() {
+	if (questionCounter < 6){
+		questionCounter++;
+		newQuestion();
+	} else {
+		alert("THE END");
+		resetGame();
+	}
+}
+
 // Body =====================================
 
 resetGame();
+
+$('#a1').on('click', function() {
+	if ($('#a1').text().indexOf(randomQuestion.correct) >= 0) {
+		alert("correct");
+		continueGame();
+	} else {
+		alert("WRONG");
+		continueGame();
+	}
+});
+
+$('#a2').on('click', function() {
+	if ($('#a2').text().indexOf(randomQuestion.correct) >= 0) {
+		alert("correct");
+		continueGame();
+	} else {
+		alert("WRONG");
+		continueGame();
+	}
+});
+
+$('#a3').on('click', function() {
+	if ($('#a3').text().indexOf(randomQuestion.correct) >= 0) {
+		alert("correct");
+		continueGame();
+	} else {
+		alert("WRONG");
+		continueGame();
+	}
+});
+
+$('#a4').on('click', function() {
+	if ($('#a4').text().indexOf(randomQuestion.correct) >= 0) {
+		alert("correct");
+		continueGame();
+	} else {
+		alert("WRONG");
+		continueGame();
+	}
+});
+
