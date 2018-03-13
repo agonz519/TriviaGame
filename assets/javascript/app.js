@@ -46,6 +46,9 @@ var questions = [q1,q2,q3,q4,q5,q6];
 var randomQuestion;
 var qGenerator = randomNoRepeats(questions);
 var questionCounter = 1;
+var numCorrect = 0;
+var numWrong = 0;
+var didntAnswer = 0;
 
 
 // Functions ================================
@@ -62,6 +65,7 @@ function decrement() {
 
 	if (countdown === 0) {
 		clearInterval(intervalId);
+		didntAnswer++;
 		continueGame();
 	}
 }
@@ -114,6 +118,9 @@ function randomNoRepeats(array) {
 function resetGame() {
 	countdown = 5;
 	questionCounter = 1;
+	numCorrect = 0;
+	numWrong = 0;
+	didntAnswer = 0;
 	$('#time').html(countdown)
 	newQuestion();
 	timer();
@@ -124,7 +131,7 @@ function continueGame() {
 		questionCounter++;
 		newQuestion();
 	} else {
-		alert("THE END");
+		alert("THE END. Answered Correct: " + numCorrect + " | Answered Wrong: " + numWrong + " | Didn't Answer: " + didntAnswer);
 		resetGame();
 	}
 }
@@ -136,9 +143,11 @@ resetGame();
 $('#a1').on('click', function() {
 	if ($('#a1').text().indexOf(randomQuestion.correct) >= 0) {
 		alert("correct");
+		numCorrect++;
 		continueGame();
 	} else {
 		alert("WRONG");
+		numWrong++;
 		continueGame();
 	}
 });
@@ -146,9 +155,11 @@ $('#a1').on('click', function() {
 $('#a2').on('click', function() {
 	if ($('#a2').text().indexOf(randomQuestion.correct) >= 0) {
 		alert("correct");
+		numCorrect++;
 		continueGame();
 	} else {
 		alert("WRONG");
+		numWrong++;
 		continueGame();
 	}
 });
@@ -156,9 +167,11 @@ $('#a2').on('click', function() {
 $('#a3').on('click', function() {
 	if ($('#a3').text().indexOf(randomQuestion.correct) >= 0) {
 		alert("correct");
+		numCorrect++;
 		continueGame();
 	} else {
 		alert("WRONG");
+		numWrong++;
 		continueGame();
 	}
 });
@@ -166,9 +179,11 @@ $('#a3').on('click', function() {
 $('#a4').on('click', function() {
 	if ($('#a4').text().indexOf(randomQuestion.correct) >= 0) {
 		alert("correct");
+		numCorrect++;
 		continueGame();
 	} else {
 		alert("WRONG");
+		numWrong++;
 		continueGame();
 	}
 });
