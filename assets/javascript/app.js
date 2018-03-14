@@ -132,8 +132,8 @@ function continueGame() {
 		questionCounter++;
 		newQuestion();
 	} else {
-		alert("THE END. Answered Correct: " + numCorrect + " | Answered Wrong: " + numWrong + " | Didn't Answer: " + didntAnswer);
-		resetGame();
+		$('#summaryModal .modal-body').html("THE END. Answered Correct: " + numCorrect + " | Answered Wrong: " + numWrong + " | Didn't Answer: " + didntAnswer);
+		$('#summaryModal').modal('show');
 	}
 }
 
@@ -208,6 +208,10 @@ $('#correctAnswerModal').on('hide.bs.modal', function() {
 
 $('#wrongAnswerModal').on('hide.bs.modal', function() {
 	continueGame();
+});
+
+$('#summaryModal').on('hide.bs.modal', function() {
+	resetGame();
 });
 
 
