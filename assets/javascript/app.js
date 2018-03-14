@@ -66,7 +66,8 @@ function decrement() {
 	if (countdown === 0) {
 		clearInterval(intervalId);
 		didntAnswer++;
-		continueGame();
+		$('#timesUpModal .modal-body').html('<p>The correct answer is </p>' + randomQuestion.correct);
+		$('#timesUpModal').modal('show');
 	}
 }
 
@@ -142,49 +143,73 @@ resetGame();
 
 $('#a1').on('click', function() {
 	if ($('#a1').text().indexOf(randomQuestion.correct) >= 0) {
-		alert("correct");
+		clearInterval(intervalId);
 		numCorrect++;
-		continueGame();
+		$('#correctAnswerModal .modal-body').html('<p>The correct answer is </p>' + randomQuestion.correct);
+		$('#correctAnswerModal').modal('show');
 	} else {
-		alert("WRONG");
+		clearInterval(intervalId);
 		numWrong++;
-		continueGame();
+		$('#wrongAnswerModal .modal-body').html('<p>The correct answer is </p>' + randomQuestion.correct);
+		$('#wrongAnswerModal').modal('show');
 	}
 });
 
 $('#a2').on('click', function() {
 	if ($('#a2').text().indexOf(randomQuestion.correct) >= 0) {
-		alert("correct");
+		clearInterval(intervalId);
 		numCorrect++;
-		continueGame();
+		$('#correctAnswerModal .modal-body').html('<p>The correct answer is </p>' + randomQuestion.correct);
+		$('#correctAnswerModal').modal('show');
 	} else {
-		alert("WRONG");
+		clearInterval(intervalId);
 		numWrong++;
-		continueGame();
+		$('#wrongAnswerModal .modal-body').html('<p>The correct answer is </p>' + randomQuestion.correct);
+		$('#wrongAnswerModal').modal('show');
 	}
 });
 
 $('#a3').on('click', function() {
 	if ($('#a3').text().indexOf(randomQuestion.correct) >= 0) {
-		alert("correct");
+		clearInterval(intervalId);
 		numCorrect++;
-		continueGame();
+		$('#correctAnswerModal .modal-body').html('<p>The correct answer is </p>' + randomQuestion.correct);
+		$('#correctAnswerModal').modal('show');
 	} else {
-		alert("WRONG");
+		clearInterval(intervalId);
 		numWrong++;
-		continueGame();
+		$('#wrongAnswerModal .modal-body').html('<p>The correct answer is </p>' + randomQuestion.correct);
+		$('#wrongAnswerModal').modal('show');
 	}
 });
 
 $('#a4').on('click', function() {
 	if ($('#a4').text().indexOf(randomQuestion.correct) >= 0) {
-		alert("correct");
+		clearInterval(intervalId);
 		numCorrect++;
-		continueGame();
+		$('#correctAnswerModal .modal-body').html('<p>The correct answer is </p>' + randomQuestion.correct);
+		$('#correctAnswerModal').modal('show');
 	} else {
-		alert("WRONG");
+		clearInterval(intervalId);
 		numWrong++;
-		continueGame();
+		$('#wrongAnswerModal .modal-body').html('<p>The correct answer is </p>' + randomQuestion.correct);
+		$('#wrongAnswerModal').modal('show');
+
 	}
 });
+
+$('#timesUpModal').on('hide.bs.modal', function() {
+	continueGame();
+});
+
+$('#correctAnswerModal').on('hide.bs.modal', function() {
+	continueGame();
+});
+
+$('#wrongAnswerModal').on('hide.bs.modal', function() {
+	continueGame();
+});
+
+
+
 
