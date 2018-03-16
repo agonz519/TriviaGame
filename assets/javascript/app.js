@@ -33,20 +33,38 @@ var q4 = {
 	image: "assets/images/gorram.gif"
 };
 var q5 = {
-	question: "Question 5?",
-	correct: "correct answer",
-	wrong1: "wrong1",
-	wrong2: "wrong2",
-	wrong3: "wrong3",
+	question: "Returning to a planet where he ran into some serious trouble years ago, Jayne discovers that he's become a local folk legend. In a bar, the crew enjoys the local alcoholic beverage of choice while a toast to Jayne is made. What was the name of this alcoholic beverage?",
+	correct: "Mudder\'s Milk",
+	wrong1: "Shimmerwine",
+	wrong2: "Fruity Oaty Cider",
+	wrong3: "Whiskey",
+	image: "assets/images/muddersMilk.gif"
 };
 var q6 = {
-	question: "Question 6?",
-	correct: "correct answer",
-	wrong1: "wrong1",
-	wrong2: "wrong2",
-	wrong3: "wrong3",
+	question: "Who does Captain Malcolm Reynolds marry?",
+	correct: "Saffron",
+	wrong1: "Inara",
+	wrong2: "Kaylee",
+	wrong3: "Zoë",
+	image: "assets/images/Saffron.gif"
 };
-var questions = [q1,q2,q3,q4,q5,q6];
+var q7 = {
+	question: "Captain Reynolds and Wash are brutally tortured by a leader of a criminal syndicate that dealt in murder, extortion, robbery, and drug dealing. What was the name of this villain?",
+	correct: "Adelai Niska",
+	wrong1: "Patience",
+	wrong2: "The Operative",
+	wrong3: "Jubal Early",
+	image: "assets/images/Niska.gif"
+};
+var q8 = {
+	question: "Who is the creator of Firefly and Serenity?",
+	correct: "Joss Whedon",
+	wrong1: "Sarah Michelle Gellar",
+	wrong2: "George R. R. Martin",
+	wrong3: "Nathan Fillion",
+	image: "assets/images/Joss.gif"
+};
+var questions = [q1,q2,q3,q4,q5,q6,q7, q8];
 var randomQuestion;
 var qGenerator = randomNoRepeats(questions);
 var questionCounter = 1;
@@ -132,11 +150,11 @@ function resetGame() {
 }
 
 function continueGame() {
-	if (questionCounter < 6){
+	if (questionCounter < 8){
 		questionCounter++;
 		newQuestion();
 	} else {
-		$('#summaryModal .modal-body').html("THE END. Answered Correct: " + numCorrect + " | Answered Wrong: " + numWrong + " | Didn't Answer: " + didntAnswer);
+		$('#summaryModal .modal-body').html("<p>THE END</p><p>Answered Correct: " + numCorrect + "</p><p>Answered Wrong: " + numWrong + "</p><p>Didn't Answer: " + didntAnswer + "</p>");
 		$('#summaryModal').modal('show');
 	}
 }

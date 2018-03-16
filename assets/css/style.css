@@ -31,31 +31,31 @@ body {
     font-size: 20px;
 }
 
+.modal-header, .modal-footer {
+    background-color: #bc9e93;
+}
+
+.modal-body {
+    background-image: url("../images/modal.png");
+}
+
+#summ {
+    background-image: none;
+    background-color: #e9ecef!important;
+}
+
 img {
     max-width: 80%;
     height: auto;
     border-radius: 25px;
+    border: #000 solid 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 576px) {
     .jumbotron {
         padding: 4rem 2rem;
     }
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 }
