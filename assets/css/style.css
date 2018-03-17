@@ -28,6 +28,8 @@ h1 {
 
 body {
     background-image: url("../images/Firefly_Wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-color: #bc9e93;
     font-size: 20px;
 }
 
